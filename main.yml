@@ -3,7 +3,7 @@
 - name: Fresh arch install setup
   hosts: localhost
   connection: local
-  become: true
   become_method: sudo
+  become: true
   roles:
     - role: awesomewm

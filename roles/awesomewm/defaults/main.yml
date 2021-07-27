@@ -1,7 +1,11 @@
-awesomewm_pkgs:
-  - xf86-video-fbdev
+awesomewm_deps:
+  - nvidia
   - xorg
   - xorg-xinit
   - nitrogen
   - picom
+  - base-devel
+
+awesomewm_pkgs:
+  - awesome
 

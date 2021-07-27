@@ -1,7 +1,16 @@
-- name: Install awesomewm deps
-  with_items: "{{ awesomewm_pkgs }}"
+- name: Install awesomewm dependencies
+  with_items: "{{ awesomewm_deps }}"
   pacman:
     name: "{{ item }}"
     state: present
     update_cache: true
 
+- name: Install awesomewm packages
+  with_items: "{{ awesomewm_pkgs }}"
+  pacman:
+    name: "{{ item }}"
+    update_cache: true
+
+- name: IDK
+  become: false
+  shell: "echo Hello!! $HOME <- home" 
