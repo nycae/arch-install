@@ -1,7 +1,7 @@
-awesomewm-deps:
+awesomewm_pkgs:
   - xf86-video-fbdev
   - xorg
-  - xorg-init
+  - xorg-xinit
   - nitrogen
   - picom
 

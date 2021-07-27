@@ -1,9 +1,9 @@
-#!/usr/bin/env ansible-palybook
-
+#!/usr/bin/ansible-playbook
+---
 - name: Fresh arch install setup
   hosts: localhost
   connection: local
   become: true
   become_method: sudo
   roles:
-    - role: xorg-awersomewm
+    - role: awesomewm

@@ -1,0 +1,7 @@
+- name: Install awesomewm deps
+  with_items: "{{ awesomewm_pkgs }}"
+  pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+
