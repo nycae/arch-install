@@ -1,0 +1,34 @@
+- name: Install compilers/interpreters
+  with_items: "{{ languages }}"
+  pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+
+- name: Install dev tools:
+  with_items: "{{ dev_tools }}"
+  pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+
+- name: Install package managers
+  with_items: "{{ package_managers }}"
+  pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+
+- name: Create go path
+  become: false
+  file:
+    path: "$HOME/go"
+    state: directory
+
+- name: Create go directories
+  become: false
+  with_items: [ bin, pkg, src ]
+  file:
+    path: "$HOME/go/{{ item }}"
+    state: directory
+

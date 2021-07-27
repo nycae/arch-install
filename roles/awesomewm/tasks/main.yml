@@ -4,13 +4,18 @@
     name: "{{ item }}"
     state: present
     update_cache: true
-
+ 
 - name: Install awesomewm packages
   with_items: "{{ awesomewm_pkgs }}"
   pacman:
     name: "{{ item }}"
     update_cache: true
-
-- name: IDK
+ 
+- name: Add config to xinit
   become: false
-  shell: "echo Hello!! $HOME <- home" 
+  with_items: "{{ xinit_config }}"
+  lineinfile:
+    line: "{{ item }}"
+    path: "$HOME/.xinitrc"
+    create: yes
+

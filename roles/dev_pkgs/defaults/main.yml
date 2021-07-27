@@ -1,0 +1,25 @@
+languages:
+  - base-devel
+  - python2
+  - python3
+  - go
+  - rust
+  - nodejs-lts-fermium
+  - jdk-openjdk
+
+package_managers:
+  - python-pip
+  - cargo
+  - npm
+
+dev_tools:
+  - ungoogle-chromium
+  - make
+  - chromium # Better install yay an try UnGoogled-Chromium
+  - git
+  - tmux
+  - htop
+  - alacritty
+  - curl
+  - wget
+    

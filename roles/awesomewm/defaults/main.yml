@@ -9,3 +9,8 @@ awesomewm_deps:
 awesomewm_pkgs:
   - awesome
 
+xinit_config:
+  - nitrogen --restore &
+  - picom &
+  - exec awesome
+
