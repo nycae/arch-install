@@ -7,3 +7,5 @@
   become: true
   roles:
     - role: awesomewm
+    - role: dev_pkgs
+
