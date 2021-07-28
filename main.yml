@@ -8,4 +8,6 @@
   roles:
     - role: awesomewm
     - role: dev_pkgs
+    - role: lightdm
+    - role: tune_os
 
