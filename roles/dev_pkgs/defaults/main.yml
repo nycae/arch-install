@@ -13,7 +13,6 @@ package_managers:
   - npm
 
 dev_tools:
-  - ungoogle-chromium
   - make
   - chromium # Better install yay an try UnGoogled-Chromium
   - git
