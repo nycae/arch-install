@@ -1,0 +1,7 @@
+- name: Create base directories
+  with_items: "{{ base_dirs }}"
+  become: false
+  file:
+    path: "$HOME/{{ item }}"
+    state: directory
+

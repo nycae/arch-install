@@ -1,0 +1,8 @@
+base_dirs:
+  - "Documents"
+  - "Desktop"
+  - "Images"
+  - "Downloads"
+  - "Music"
+  - "Pictures"
+  - "Videos"

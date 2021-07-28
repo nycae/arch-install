@@ -22,4 +22,5 @@ dev_tools:
   - curl
   - wget
   - neofetch
-    
+  - tree
+
