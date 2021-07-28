@@ -32,3 +32,14 @@
     path: "$HOME/go/{{ item }}"
     state: directory
 
+- name: Ensure docker group sxists
+  group:
+    name: docker
+    state: present
+
+- name: Add user: {{ user }}  to docker group
+  user:
+    name: "{{ user }}"
+    groups: docker
+    append: yes
+
