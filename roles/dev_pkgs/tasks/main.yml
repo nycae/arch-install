@@ -33,6 +33,7 @@
     state: directory
 
 - name: Add gopath to env variables
+  become: false
   with_items:
     - "export GOPATH={{ go_path }}"
     - "export PATH=$PATH:$GOPATH/bin"

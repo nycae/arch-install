@@ -23,6 +23,7 @@ dev_tools:
   - wget
   - neofetch
   - tree
+  - cloc
 
 go_path:
   - $HOME/go
