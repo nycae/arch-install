@@ -1,0 +1,3 @@
+theme:
+  repo: "https://aur.archlinux.org/lightdm-webkit2-theme-glorious.git"
+  tag: "v2.0.5"
