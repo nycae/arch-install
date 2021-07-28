@@ -21,4 +21,5 @@ dev_tools:
   - alacritty
   - curl
   - wget
+  - neofetch
     

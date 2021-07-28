@@ -1,0 +1,6 @@
+- name: install lightdm
+  pacman:
+    name: lightdm
+    state: present
+    update_cache: true
+
