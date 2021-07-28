@@ -4,3 +4,9 @@
     state: present
     update_cache: true
 
+- name: Install greeter
+  pacman:
+    name: lightdm-webkit2-greeter
+    state: present
+    update_cache: true
+
