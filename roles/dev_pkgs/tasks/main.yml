@@ -52,4 +52,9 @@
     name: "{{ lookup('env', 'USER') }}"
     groups: docker
     append: yes
+  
+- name: Start docker
+  systemd:
+    state: started
+    name: docker.service
 

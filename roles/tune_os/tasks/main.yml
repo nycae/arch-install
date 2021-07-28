@@ -5,3 +5,7 @@
     path: "$HOME/{{ item }}"
     state: directory
 
+- name: Setup desktop wallpaper
+  become: false
+  shell: nitrogen --set-zoom images/wallpaper.jpg
+  

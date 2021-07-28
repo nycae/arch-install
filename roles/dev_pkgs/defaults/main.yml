@@ -24,5 +24,6 @@ dev_tools:
   - neofetch
   - tree
   - cloc
+  - openssh
 
 go_path: $HOME/go

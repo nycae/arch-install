@@ -17,15 +17,19 @@
     version: "{{ theme.tag }}"
     dest: /tmp/lightdm-greeter-theme
 
+- name: Create theme location
+  file:
+    path: /usr/share/lightdm-webkit/themes/glorious
+    state: directory
+
 - name: Copy theme files to location
-  become: false
   copy:
     src: /tmp/lightdm-greeter-theme
     dest: /usr/share/lightdm-webkit/themes/glorious
 
 - name: Set lightdm webkit2 as the greeter
-  with_values:
-    - "sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf"
-    - "sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf"
-    - "sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf"
-  shell: "{{ item }}"
+  shell:  
+    cmd: |
+      sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
+      sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+      sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
