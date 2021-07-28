@@ -24,3 +24,5 @@ dev_tools:
   - neofetch
   - tree
 
+go_path:
+  - $HOME/go

@@ -22,15 +22,24 @@
 - name: Create go path
   become: false
   file:
-    path: "$HOME/go"
+    path: "{{ go_path }}"
     state: directory
 
 - name: Create go directories
   become: false
   with_items: [ bin, pkg, src ]
   file:
-    path: "$HOME/go/{{ item }}"
+    path: "{{ go_path }}/{{ item }}"
     state: directory
+
+- name: Add gopath to env variables
+  with_items:
+    - "export GOPATH={{ go_path }}"
+    - "export PATH=$PATH:$GOPATH/bin"
+  lineinfile:
+    line: "{{ item }}"
+    path: "$HOME/.bashrc"
+    create: yes
 
 - name: Ensure docker group sxists
   group:
