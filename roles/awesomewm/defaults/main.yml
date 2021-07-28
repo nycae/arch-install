@@ -8,6 +8,7 @@ awesomewm_deps:
 
 awesomewm_pkgs:
   - awesome
+  - compton
 
 xinit_config:
   - nitrogen --restore &
