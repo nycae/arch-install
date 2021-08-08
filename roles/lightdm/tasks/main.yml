@@ -1,6 +1,7 @@
 - name: install lightdm
+  with_items: "{{ packages }}"
   pacman:
-    name: lightdm
+    name: "{{ item }}"
     state: present
     update_cache: true
 
@@ -33,3 +34,16 @@
       sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
       sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
       sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+
+- name: Enable locker
+  become: false
+  lineinfile:
+    path: "$HOME/.xinitrc"
+    line: "light-locker &"
+
+- name: Enable lightdm
+  systemd:
+    state: started
+    name: lightdm
+    enabled: true
+

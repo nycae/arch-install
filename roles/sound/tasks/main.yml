@@ -1,0 +1,14 @@
+- name: install packages
+  with_items: "{{ packages }}"
+  pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+
+- name: Start pulseaudio as a daemon
+  become: false
+  lineinfile:
+    line: pulseaudio -D
+    path: "$HOME/.xinitrc"
+    create: yes
+

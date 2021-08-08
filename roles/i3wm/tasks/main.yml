@@ -1,12 +1,12 @@
-- name: Install awesomewm dependencies
-  with_items: "{{ awesomewm_deps }}"
+- name: Install i3wm dependencies
+  with_items: "{{ i3wm_deps }}"
   pacman:
     name: "{{ item }}"
     state: present
     update_cache: true
  
-- name: Install awesomewm packages
-  with_items: "{{ awesomewm_pkgs }}"
+- name: Install i3wm packages
+  with_items: "{{ i3wm_pkgs }}"
   pacman:
     name: "{{ item }}"
     update_cache: true

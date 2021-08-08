@@ -1,0 +1,8 @@
+packages:
+  - pulseaudio
+  - pulseaudio-jack
+  - alsa-utils
+  - alsa-plugins
+  - alsa-lib
+  - pavucontrol
+

@@ -25,5 +25,6 @@ dev_tools:
   - tree
   - cloc
   - openssh
+  - docker
 
 go_path: $HOME/go
