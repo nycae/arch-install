@@ -6,9 +6,9 @@
     update_cache: true
 
 - name: Start pulseaudio as a daemon
-  become: false
   lineinfile:
-    line: pulseaudio -D
-    path: "$HOME/.xinitrc"
-    create: yes
+    line: "pulseaudio -D & \n"
+    path: /etc/lightdm/Xsession
+    insertbefore: 'exec .*'
+    firstmatch: true
 

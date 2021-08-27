@@ -7,5 +7,5 @@
 
 - name: Setup desktop wallpaper
   become: false
-  shell: nitrogen --set-zoom images/wallpaper.jpg
+  shell: nitrogen --save --set-zoom images/wallpaper.jpg
   

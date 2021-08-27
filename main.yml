@@ -6,9 +6,9 @@
   become_method: sudo
   become: true
   roles:
-    # - role: i3wm
-    # - role: dev_pkgs
-    # - role: lightdm
-    # - role: tune_os
+    - role: lightdm
+    - role: i3wm
+    - role: dev_pkgs
+    - role: tune_os
     - role: sound
 

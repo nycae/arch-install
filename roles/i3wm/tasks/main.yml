@@ -11,11 +11,35 @@
     name: "{{ item }}"
     update_cache: true
  
-- name: Add config to xinit
-  become: false
-  with_items: "{{ xinit_config }}"
+- name: Add config to lightdm session
+  with_items: "{{ xinit_config + ['\n'] }}"
   lineinfile:
     line: "{{ item }}"
-    path: "$HOME/.xinitrc"
-    create: yes
+    path: /etc/lightdm/Xsession 
+    insertbefore: 'exec .*'
+
+- name: Clone i3 swallow
+  become: false
+  git:
+    repo: https://github.com/jamesofarrell/i3-swallow
+    dest: "$HOME/.repos/i3-swallow"
+
+- name: Create swallow path
+  become: false
+  file:
+    path: "$HOME/.local/bin"
+    state: directory
+
+- name: Build i3 swallow
+  become: false
+  with_items:
+  - "python3 -m pip install -r $HOME/.repos/i3-swallow/requirements.txt"
+  - "make -C $HOME/.repos/i3-swallow install"
+  shell: "{{ item }}"
+
+- name: Add executable to file
+  become: false
+  lineinfile:
+    line: "export PATH=$PATH:$HOME/.local/bin" 
+    path: "$HOME/.bashrc"
 

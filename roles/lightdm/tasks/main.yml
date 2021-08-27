@@ -29,17 +29,26 @@
     dest: /usr/share/lightdm-webkit/themes/glorious
 
 - name: Set lightdm webkit2 as the greeter
-  shell:  
-    cmd: |
-      sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
-      sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
-      sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+  replace:
+    path: /etc/lightdm/lightdm.conf
+    regexp: '\#greeter-session=example-gtk-gnome'
+    replace: 'greeter-session=lightdm-webkit2-greeter'
+
+- name: Set glorious as webkit theme
+  with_items:
+  - "webkit_theme=glorious"
+  - "debug_mode=true"
+  lineinfile:
+    path: /etc/lightdm/lightdm.conf
+    line: "{{ item }}"
+    insertafter: 'greeter-session=lightdm-webkit2-greeter'
 
 - name: Enable locker
-  become: false
   lineinfile:
-    path: "$HOME/.xinitrc"
-    line: "light-locker &"
+    path: /etc/lightdm/Xsession
+    line: "light-locker & \n"
+    insertbefore: 'exec .*'
+    firstmatch: true
 
 - name: Enable lightdm
   systemd:

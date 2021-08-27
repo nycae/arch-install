@@ -12,8 +12,6 @@ i3wm_pkgs:
   - i3-gaps
   - i3status
   - i3blocks
-  - i3bar
-  - i3swallow
   - dmenu
 
 xinit_config:
