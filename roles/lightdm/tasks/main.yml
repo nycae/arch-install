@@ -16,7 +16,7 @@
   git:
     repo: "{{ theme.repo }}"
     version: "{{ theme.tag }}"
-    dest: /tmp/lightdm-greeter-theme
+    dest: /tmp/glorious
 
 - name: Create theme location
   file:
@@ -25,7 +25,7 @@
 
 - name: Copy theme files to location
   copy:
-    src: /tmp/lightdm-greeter-theme
+    src: /tmp/glorious
     dest: /usr/share/lightdm-webkit/themes/glorious
 
 - name: Set lightdm webkit2 as the greeter
