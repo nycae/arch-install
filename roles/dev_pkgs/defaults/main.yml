@@ -26,5 +26,6 @@ dev_tools:
   - cloc
   - openssh
   - docker
+  - iwd
 
 go_path: $HOME/go

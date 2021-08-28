@@ -6,8 +6,12 @@
     update_cache: true
 
 - name: Start pulseaudio as a daemon
+  with_items:
+  - "pulseaudio -D &"
+  - "alsactl init &"
+  - "\n"
   lineinfile:
-    line: "pulseaudio -D & \n"
+    line: "{{ item }}"
     path: /etc/lightdm/Xsession
     insertbefore: 'exec .*'
     firstmatch: true
