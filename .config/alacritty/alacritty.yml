@@ -58,3 +58,22 @@ colors:
     white: '#aeb3bb'
 
 background_opacity: 0.90
+
+font:
+  size: 11
+  normal:
+    family: monospace
+    style: regular
+
+  bold:
+    family: monospace
+    style: bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+

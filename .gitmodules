@@ -7,3 +7,9 @@
 [submodule "/home/nycae/.vim/pack/plugins/start/rust.vim"]
 	path = /home/nycae/.vim/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "/home/nycae/.tmux/plugins/tpm"]
+	path = /home/nycae/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "/home/nycae/.tmux/plugins/nord-tmux"]
+	path = /home/nycae/.tmux/plugins/nord-tmux
+	url = https://github.com/arcticicestudio/nord-tmux

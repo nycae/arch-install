@@ -28,6 +28,8 @@ colo nord
 :set textwidth=120
 :syntax on
 
+:highlight Comment ctermfg=yellow
+
 " File specific config
 au FileType make set noexpandtab shiftwidth=4 tabstop=4 softtabstop=0
 au FileType yaml set expandtab tabstop=2 shiftwidth=2 softtabstop=0
