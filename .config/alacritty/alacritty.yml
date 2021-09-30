@@ -1,3 +1,8 @@
+shell:
+  program: /bin/tmux
+  args: 
+    - -u
+
 # Credit to Artic studio for the nord colorscheme
 # BTW guys, it needs a bit more of contrast, dont be that silly.
 colors:
@@ -57,23 +62,23 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 
-background_opacity: 0.90
+background_opacity: 0.9
 
 font:
   size: 11
   normal:
-    family: monospace
+    family: SourceCodePro
     style: regular
-
+  
   bold:
-    family: monospace
+    family: SourceCodePro
     style: bold
-
+  
   italic:
-    family: monospace
+    family: SourceCodePro
     style: Italic
-
+  
   bold_italic:
-    family: monospace
+    family: SourceCodePro
     style: Bold Italic
 
